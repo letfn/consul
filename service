@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function main {
+  set -x
+
+  cd /consul/data
+
+  exec "docker-entrypoint.sh" "$@"
+}
+
+main "$@"

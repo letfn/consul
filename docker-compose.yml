@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  consul:
+    image: defn/consul
+    env_file: .env
+    cap_add:
+    - NET_ADMIN
+    ports:
+    - 127.0.0.1:1194:1194
+    volumes:
+    - /mnt/consul:/consul/data
+    restart: always
