@@ -3,6 +3,9 @@ version: '3.7'
 services:
   consul:
     image: defn/consul
+    command:
+      - -advertise
+      - ${NODE_IP}
     env_file: .env
     network_mode: host
     volumes:
