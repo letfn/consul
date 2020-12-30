@@ -27,3 +27,9 @@ recreate:
 
 logs:
 	docker-compose logs -f
+
+config: # Generate consul server config
+	echo NODE_IP=$$(ip addr show tailscale0 | grep '/32' | awk '{print $$2}' | cut -d/ -f1) > .env
+
+join: # Join consul cluster
+	docker-compose exec consul consul join private.defn.sh
