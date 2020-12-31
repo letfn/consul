@@ -4,10 +4,13 @@ services:
   consul:
     image: defn/consul
     command:
+      - -datacenter
+      - ${CONSUL_DATACENTER}
       - -advertise
       - ${NODE_IP}
       - -node
       - ${NODE_NAME}
+      - ${CONSUL_SERVER}
     env_file: .env
     ports:
       - "8600:8600/tcp"

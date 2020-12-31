@@ -9,6 +9,9 @@ build: # Build defn/consul
 push: # Push defn/consul
 	docker push defn/consul
 
+pull : # Pull defn/consul
+	docker pull defn/consul
+
 bash: # Run bash shell with defn/consul
 	docker run --rm -ti --entrypoint bash defn/consul
 
