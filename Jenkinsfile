@@ -1,16 +1,10 @@
 pipeline {
     agent {
-        docker { 
-            image 'ubuntu' 
-            args '--entrypoint='
-        }
-
     }
     stages {
-        stage('Test') {
+        stage('Build image') {
             steps {
-                sh 'uname -a'
-
+                sh 'make build'
             }
         }
     }
