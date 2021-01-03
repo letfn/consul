@@ -4,10 +4,10 @@ menu:
 	@perl -ne 'printf("%10s: %s\n","$$1","$$2") if m{^([\w+-]+):[^#]+#\s(.+)$$}' Makefile
 
 build: # Build defn/consul
-	podman build -t defn/consul .
+	docker build -t defn/consul .
 
 push: # Push defn/consul
-	podman push defn/consul
+	docker push defn/consul
 
 pull : # Pull defn/consul
 	docker pull defn/consul
