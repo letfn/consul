@@ -15,7 +15,8 @@ builds:
 dockers:
   - binaries:
       - main
-    extra_files: []
+    extra_files:
+      - service
     goos: linux
     goarch: amd64
     image_templates:
@@ -27,7 +28,8 @@ dockers:
       - --platform=linux/amd64
   - binaries:
       - main
-    extra_files: []
+    extra_files:
+      - service
     goos: linux
     goarch: arm64
     image_templates:
