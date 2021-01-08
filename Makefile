@@ -31,6 +31,9 @@ recreate:
 logs:
 	docker-compose logs -f
 
+pr:
+	gh pr create --web
+
 config: # Generate consul server config
 	echo NODE_IP=$$(ip addr show tailscale0 | grep '/32' | awk '{print $$2}' | cut -d/ -f1) > .env
 
