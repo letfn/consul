@@ -21,7 +21,6 @@ dockers:
     goarch: amd64
     image_templates:
       - "defn/consul:1.9.1-{{ .Version }}-amd64"
-      - "defn/consul:1.9.1-v{{ .Version }}-amd64"
     dockerfile: Dockerfile
     use_buildx: true
     build_flag_templates:
@@ -33,7 +32,6 @@ dockers:
     goos: linux
     goarch: arm64
     image_templates:
-      - "defn/consul:1.9.1-{{ .Version }}-arm64"
       - "defn/consul:1.9.1-{{ .Version }}-arm64"
     dockerfile: Dockerfile
     use_buildx: true
