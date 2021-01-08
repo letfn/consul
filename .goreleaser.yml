@@ -38,7 +38,7 @@ dockers:
     build_flag_templates:
       - --platform=linux/arm64/v8
 docker_manifests:
-  - name_template: "defn/consul:{{ .Version }}"
+  - name_template: "defn/consul:1.9.1-{{ .Version }}"
     image_templates:
       - "defn/consul:1.9.1-{{ .Version }}-amd64"
       - "defn/consul:1.9.1-{{ .Version }}-arm64"
