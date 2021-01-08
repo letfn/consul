@@ -81,7 +81,7 @@ node() {
           }
 
           stage('Test Docker image') {
-            sh "/env.sh docker run --rm " + NM_PROJECT + ":${env.GORELEASER_CURRENT_TAG}-amd64"
+            sh "/env.sh docker run --rm " + NM_PROJECT + ":1.9.1-${env.GORELEASER_CURRENT_TAG}-amd64"
           }
         }
         else {
