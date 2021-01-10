@@ -3,10 +3,10 @@
 library 'defn/jenkins-kiki@main'
 
 def config = [
-  role: 'defn--consul',
+  role: 'letfn--consul',
   roleId: '491687f4-f642-db68-2967-e548ff4f5d82',
   pipelineSecrets: [[
-    path: 'kv/pipeline/defn--consul',
+    path: 'kv/pipeline/letfn--consul',
     secretValues: [
       [vaultKey: 'MEH1'],
       [vaultKey: 'MEH2']
