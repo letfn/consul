@@ -8,8 +8,7 @@ def config = [
   pipelineSecrets: [[
     path: 'kv/pipeline/letfn--consul',
     secretValues: [
-      [vaultKey: 'MEH1'],
-      [vaultKey: 'MEH2']
+      [vaultKey: 'MEH1']
     ]
   ]]
 ]
