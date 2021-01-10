@@ -13,7 +13,7 @@ builds:
     env:
       - CGO_ENABLED=0
 dockers:
-  - binaries:
+  - ids:
       - main
     extra_files:
       - service
@@ -25,7 +25,7 @@ dockers:
     use_buildx: true
     build_flag_templates:
       - --platform=linux/amd64
-  - binaries:
+  - ids:
       - main
     extra_files:
       - service
