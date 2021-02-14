@@ -1,4 +1,4 @@
-FROM consul:1.9.1
+FROM consul:1.9.3
 
 RUN apk add bash
 

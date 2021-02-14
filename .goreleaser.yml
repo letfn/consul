@@ -20,7 +20,7 @@ dockers:
     goos: linux
     goarch: amd64
     image_templates:
-      - "defn/consul:1.9.1-{{ .Version }}-amd64"
+      - "defn/consul:1.9.3-{{ .Version }}-amd64"
     dockerfile: Dockerfile
     use_buildx: true
     build_flag_templates:
@@ -32,16 +32,16 @@ dockers:
     goos: linux
     goarch: arm64
     image_templates:
-      - "defn/consul:1.9.1-{{ .Version }}-arm64"
+      - "defn/consul:1.9.3-{{ .Version }}-arm64"
     dockerfile: Dockerfile
     use_buildx: true
     build_flag_templates:
       - --platform=linux/arm64/v8
 docker_manifests:
-  - name_template: "defn/consul:1.9.1-{{ .Version }}"
+  - name_template: "defn/consul:1.9.3-{{ .Version }}"
     image_templates:
-      - "defn/consul:1.9.1-{{ .Version }}-amd64"
-      - "defn/consul:1.9.1-{{ .Version }}-arm64"
+      - "defn/consul:1.9.3-{{ .Version }}-amd64"
+      - "defn/consul:1.9.3-{{ .Version }}-arm64"
 checksum:
   name_template: 'checksums.txt'
 snapshot:
