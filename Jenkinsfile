@@ -17,7 +17,7 @@ goreleaserMain(config) {
   if (env.TAG_NAME) {
     stage('Test Docker image') {
       sh("/env.sh figlet -f /j/chunky.flf test docker")
-      sh "/env.sh docker run --rm --entrypoint /main defn/consul:1.9.1-${env.GORELEASER_CURRENT_TAG.minus('v')}-amd64"
+      sh "/env.sh docker run --rm --entrypoint /main defn/consul:1.9.3-${env.GORELEASER_CURRENT_TAG.minus('v')}-amd64"
     }
   }
   else {
