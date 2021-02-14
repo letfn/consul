@@ -39,3 +39,10 @@ config: # Generate consul server config
 
 join: # Join consul cluster
 	docker-compose exec consul consul join private.defn.sh
+
+ci-go-test:
+	/env.sh figlet -f /j/chunky.flf go
+	/env.sh $(MAKE) test
+
+test:
+	go test
