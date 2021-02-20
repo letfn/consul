@@ -34,15 +34,6 @@ recreate:
 logs:
 	docker-compose logs -f
 
-pr:
-	gh pr create --web
-
-config: # Generate consul server config
-	echo NODE_IP=$$(ip addr show tailscale0 | grep '/32' | awk '{print $$2}' | cut -d/ -f1) > .env
-
-join: # Join consul cluster
-	docker-compose exec consul consul join private.defn.sh
-
 ci-go-test:
 	/env.sh figlet -f /j/chunky.flf go
 	/env.sh $(MAKE) test
