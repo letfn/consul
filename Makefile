@@ -3,8 +3,11 @@ SHELL := /bin/bash
 menu:
 	@perl -ne 'printf("%10s: %s\n","$$1","$$2") if m{^([\w+-]+):[^#]+#\s(.+)$$}' Makefile
 
-build: # Build defn/consul
+build: main # Build defn/consul
 	docker build -t defn/consul .
+
+main: # Build main
+	go build -o main
 
 push: # Push defn/consul
 	docker push defn/consul
