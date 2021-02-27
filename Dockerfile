@@ -8,4 +8,4 @@ COPY service /service
 
 ENTRYPOINT [ "/service" ]
 
-CMD []
+CMD [ "-server" ]
