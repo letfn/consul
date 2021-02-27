@@ -50,3 +50,6 @@ dummy-Linux:
 
 darwin-Darwin:
 	sudo ifconfig lo0 alias "169.254.32.1" netmask 255.255.255.255
+
+env:
+	docker run --rm -v env_consul:/secrets alpine cat /secrets/.env > .env
