@@ -4,14 +4,7 @@ services:
   consul:
     image: defn/consul
     command:
-      - -datacenter
-      - ${CONSUL_DATACENTER}
-      - -advertise
-      - ${NODE_IP}
-      - -node
-      - ${NODE_NAME}
-      - ${CONSUL_SERVER}
-    env_file: .env
+      - -server
     ports:
       - "8600:8600/tcp"
       - "8600:8600/udp"
@@ -22,5 +15,10 @@ services:
       - "8302:8302/tcp"
       - "8302:8302/udp"
     volumes:
-    - ${CONSUL_MOUNT}/consul:/consul/data
+      - ${CONSUL_MOUNT:-./mnt}/consul:/consul/data
+      - env_consul:/secrets
     restart: always
+
+volumes:
+  env_consul:
+    external: true

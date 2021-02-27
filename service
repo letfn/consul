@@ -1,11 +1,25 @@
 #!/usr/bin/env bash
 
+set -x
+
 function main {
-  set -x
+  set -a
+  source /secrets/.env
+  set +a
 
   cd /consul/data
 
-  exec "docker-entrypoint.sh" "$@"
+  exec "docker-entrypoint.sh" \
+    agent \
+    -data-dir /consul/data \
+    -bind 0.0.0.0 \
+    -client 0.0.0.0 \
+    -ui \
+    -protocol 3 \
+    -datacenter "${CONSUL_DATACENTER}" \
+    -advertise "${NODE_IP}" \
+    -node "${NODE_NAME}" \
+    "$@"
 }
 
 main "$@"
