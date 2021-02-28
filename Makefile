@@ -48,7 +48,7 @@ dummy-Linux:
 	docker run --rm -i --privileged --network=host --pid=host alpine \
 		nsenter -t 1 -m -u -n -i -- bash -c "ip link add dummy0 type dummy; ip addr add 169.254.32.1/32 dev dummy0; ip link set dev dummy0 up"
 
-darwin-Darwin:
+dummy-Darwin:
 	sudo ifconfig lo0 alias "169.254.32.1" netmask 255.255.255.255
 
 env:
