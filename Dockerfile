@@ -6,6 +6,6 @@ COPY main /main
 
 COPY service /service
 
-ENTRYPOINT [ "/service", "agent", "-data-dir", "/consul/data", "-bind", "0.0.0.0", "-client", "0.0.0.0", "-ui", "-protocol", "3" ]
+ENTRYPOINT [ "/service" ]
 
-CMD []
+CMD [ "-server" ]

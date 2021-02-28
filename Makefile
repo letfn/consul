@@ -41,9 +41,15 @@ ci-go-test:
 test:
 	go test
 
-dummy:
+once:
+	$(MAKE) dummy-$(shell uname -s)
+
+dummy-Linux:
 	docker run --rm -i --privileged --network=host --pid=host alpine \
 		nsenter -t 1 -m -u -n -i -- bash -c "ip link add dummy0 type dummy; ip addr add 169.254.32.1/32 dev dummy0; ip link set dev dummy0 up"
 
-darwin-dummy:
+dummy-Darwin:
 	sudo ifconfig lo0 alias "169.254.32.1" netmask 255.255.255.255
+
+env:
+	docker run --rm -v env_consul:/secrets alpine cat /secrets/.env > .env
